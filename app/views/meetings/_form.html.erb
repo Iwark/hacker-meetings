@@ -1,0 +1,57 @@
+<%= form_for(@meeting) do |f| %>
+	<% if @meeting.errors.any? %>
+		<div id="error_explanation">
+			<h2>Error</h2>
+			<ul>
+			<% @meeting.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.label 'タイトル' %>
+		<%= f.text_field :title %>
+	</div>
+
+	<div class="field">
+		<%= f.label '内容' %>
+		<%= f.text_area :body %>
+	</div>
+
+	<div class="field">
+		<%= f.label '画像' %>
+		<%= f.file_field :image %>
+	</div>
+
+	<div class="field">
+		<%= f.label '日時' %>
+		<%= f.datetime_select :start_date %> - <%= f.datetime_select :end_date %>
+	</div>
+
+	<div class="field">
+		<%= f.label '定員' %>
+		<%= f.text_field :capacity %>
+	</div>
+
+	<div class="field">
+		<%= f.label '会場名' %>
+		<%= f.text_field :place %>
+	</div>
+
+	<div class="field">
+		<%= f.label '会場の情報' %>
+		<%= f.text_field :place_info %>
+	</div>
+
+	<div class="field">
+		<%= f.label 'URL' %>
+		<%= f.text_field :url %>
+	</div>
+
+	<div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
