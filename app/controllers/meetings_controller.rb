@@ -3,6 +3,7 @@
 # Date:: 2014-05-07
 # Meetingを管理するコントローラ
 class MeetingsController < ApplicationController
+	before_filter :authenticate_user!
 	before_action :set_meeting, only: [:show, :edit, :update, :destroy]
 	# Meetings一覧を表示するアクション
 	# get /meetings

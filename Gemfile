@@ -15,6 +15,10 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'jazz_hands'
