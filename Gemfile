@@ -21,6 +21,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'rb-readline'
+
 gem 'marked-rails'
 
 group :development, :test do
