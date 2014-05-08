@@ -20,4 +20,6 @@
 class Meeting < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
   validates_presence_of :title, :body, :user_id, :start_date, :end_date, :place
+
+  belongs_to :user
 end

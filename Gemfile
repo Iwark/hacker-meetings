@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'rails', '4.1.0'
 
 gem 'sass-rails', '~> 4.0.3'
@@ -18,6 +20,8 @@ gem 'rmagick'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'marked-rails'
 
 group :development, :test do
   gem 'sqlite3'

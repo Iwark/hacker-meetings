@@ -15,9 +15,16 @@
 		<%= f.text_field :title, class:"form-control" %>
 	</div>
 
-	<div class="form-group">
-		<%= f.label :body, '内容', class:"control-label" %>
-		<%= f.text_area :body, class:"form-control" %>
+	<div class="row">
+		<div class="form-group col-xs-6">
+			<%= f.label :body, '内容（マークダウン記法が使えます）', class:"control-label" %>
+			<%= f.text_area :body, value:"## 概要\nイベントを開催します。\n\n## 参加条件\n誰でもOK！", class:"form-control meeting_body" %>
+		</div>
+		<div class="col-xs-6">
+			<%= label_tag :preview, 'プレビュー', class:"control-label" %>
+			<div class="preview">
+			</div>
+		</div>
 	</div>
 
 	<div class="form-group">
@@ -35,20 +42,22 @@
 		<%= f.text_field :capacity, class:"form-control" %>
 	</div>
 
-	<div class="form-group">
-		<%= f.label :place, '会場名', class:"control-label" %>
-		<%= f.text_field :place, class:"form-control" %>
-	</div>
+	<div class="row">
+		<div class="form-group col-xs-6">
+			<%= f.label :place, '会場名', class:"control-label" %>
+			<%= f.text_field :place, class:"form-control" %>
+		</div>
 
-	<div class="form-group">
-		<%= f.label :place_info, '会場の情報', class:"control-label" %>
-		<%= f.text_field :place_info, class:"form-control" %>
+		<div class="form-group col-xs-6">
+			<%= f.label :place_info, '会場の情報', class:"control-label" %>
+			<%= f.text_field :place_info, class:"form-control" %>
+		</div>
 	</div>
 
 	<div class="form-group">
 		<%= f.label :url, 'URL', class:"control-label" %>
-		<%= f.text_field :url, class:"form-control" %>
-	</div>
+		<%= f.text_field :url, value:"http://", class:"form-control" %>
+	</div>	
 
 	<div class="form-group">
     <%= f.submit '作成', class:"btn btn-primary" %>
