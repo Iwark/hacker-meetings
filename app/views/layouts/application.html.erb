@@ -5,15 +5,22 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+  <% if user_signed_in? %>
 
   <!-- Header -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
-      <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-      <%= link_to 'HackerMeetings',root_path, class:"navbar-brand" %>
+      <div class="navbar-left">
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+        <%= link_to 'HackerMeetings',root_path, class:"nav navbar-brand" %>
+      </div>
+      <div class="navbar-right">
+        <%= link_to image_tag("new_event.jpg"), new_meeting_path %>
+      </div>
     </div>
   </nav>
 
@@ -32,6 +39,12 @@
         </li>
       </ul>
     </div>
+
+  <% else %>
+
+  <div>
+
+  <% end %>
 
     <!-- Container -->
     <div class="container">
