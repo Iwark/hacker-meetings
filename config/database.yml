@@ -22,9 +22,7 @@ test:
 
 production:
   adapter: postgresql
-  host: localhost
   encoding: utf8
   database: hackerdb
   pool: 5
   username: hacker
-  password: 
