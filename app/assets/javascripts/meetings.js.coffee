@@ -1,12 +1,15 @@
 //= require marked
 
 $( () ->
-	$(".preview").html marked($(".meeting_body").val())
-	$("textarea.meeting_body").on 'keyup', () ->
-		$(".preview").html marked($("textarea.meeting_body").val())
-		return
+	if $(".preview").size() > 0
+		$(".preview").html marked($(".meeting_body").val())
+	if $("textarea.meeting_body").size() > 0
+		$("textarea.meeting_body").on 'keyup', () ->
+			$(".preview").html marked($("textarea.meeting_body").val())
+			return
 
-	$("div.meeting_body").html marked($("div.meeting_body").text())
+	if $("div.meeting_body").size() > 0
+		$("div.meeting_body").html marked($("div.meeting_body").text())
 
 
 );
