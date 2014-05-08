@@ -8,7 +8,36 @@
 </head>
 <body>
 
-<%= yield %>
+  <!-- Header -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+      <%= link_to 'HackerMeetings',root_path, class:"navbar-brand" %>
+    </div>
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="icon_feed"><a href="#"></a>
+        </li>
+        <li class="icon_calendar"><a href="#"></a>
+        </li>
+        <li class="icon_friend"><a href="#"></a>
+        </li>
+        <li class="icon_setting"><a href="#"></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </div>
 
 </body>
 </html>
