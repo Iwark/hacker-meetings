@@ -3,20 +3,36 @@
 	resize: none;
 	height: 250px;
 }
+.meeting_title{
+	font-size: 60px;
+
+}
+
+.meeting_image{
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
 
 .meeting{
 	margin-top: 20px;
 	padding: 0px;
-	border-radius: 4px;
-	border: 1px solid;
+	border-radius: 16px;
+	border: 2px solid;
+	border-color: #3aa480
 }
 .current_members_num{
 	text-align: center;
 	font-size: 60px;
 }
 
+
+
+
 .preview{
 	margin: 0;
 	background-color: #eee;
 	zoom:75%;
+	width:100%;
+	word-break:break-all;
 }
