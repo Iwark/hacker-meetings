@@ -25,4 +25,22 @@ class Meeting < ActiveRecord::Base
   has_many :members
   has_many :users, through: :members
 
+  # 参加者の一覧を取得
+  def join_members
+    users = []
+    self.members.where(status:"join").each do |member|
+      users << member.user
+    end
+    users
+  end
+
+  # キャンセルした人の一覧を取得
+  def cancel_members
+    users = []
+    self.members.where(status:"cancel").each do |member|
+      users << member.user
+    end
+    users
+  end
+
 end
