@@ -1,0 +1,38 @@
+<div class="row meeting">
+  <div class="col-xs-10">
+    <div class="meeting_title">
+      <%= @meeting.title %>
+    </div>
+    <hr></hr>
+    <div class="col-xs-12 col-sm-6">
+      <%= image_tag @meeting.image_url(:thumb).to_s, class:"img-responsive meeting_image" %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-4 col-sm-12">
+
+      </div>
+      <div class="col-xs-4 col-sm-12">
+        日時：<%= @meeting.start_date.strftime('%Y年%m月%d日 %H:%M') %> - <%= @meeting.end_date.strftime('%H:%M') %>
+      </div>
+      <div class="col-xs-4 col-sm-12">
+        場所:
+        <div><%= @meeting.place %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 meeting_body"><%= @meeting.body %></div> 
+  </div>
+  <div class="col-xs-2" style="background-color:red;">
+    <div class="current_members_num">6</div>
+    <% if @meeting.user == current_user %>
+      <%# link_to 'イベントをキャンセルする', meetings_remove_path(@meeting) %>
+    <% elsif @meeting.users.include?(current_user) %>
+      <%= link_to '参加をキャンセルする', meetings_cancel_path(@meeting), method: :delete %>
+    <% else %>
+      <%= link_to '参加する', meetings_join_path(@meeting) %>
+    <% end %>
+    <div>参加メンバー</div>
+    <div class="current_members">aaa</div>
+  </div>
+</div>

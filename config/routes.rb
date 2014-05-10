@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get 'meetings', to: "meetings#index", as: "user_root"
   post 'meetings/join/:id', to:"meetings#join", as: "meetings_join"
   delete 'meetings/cancel/:id', to:"meetings#cancel", as:"meetings_cancel"
-  resources :meetings, only: [:new, :create]
+  resources :meetings, only: [:new, :create, :show]
 
 end
