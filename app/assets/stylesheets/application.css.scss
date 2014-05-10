@@ -56,38 +56,60 @@ body {
   padding: 14px;
 }
 
-.icon_event {
-  background-color: #548575;
+.sidebar_icon{
+  float:left;
+}
+
+.sidebar_text{
+  margin-left:10px;
+  float:left;
+}
+
+li:nth-child(odd) {
+  a{
+    color: #a9e0cb;
+  }
+  background-color: #548575
+} 
+
+
+li:nth-child(even) {
+  a{
+  color: #375b4e;
+  }
+  background-color: #68a58f
+} 
+
+.icon_event {;
 }
 .icon_calendar {
-  background-color: #68a58f;
 }
 .icon_my_event {
-  background-color: #548575;
 }
 .icon_member {
-  background-color: #68a58f;
 }
 .icon_account {
-  background-color: #548575;
 }
 
 hr {
   background-color: #8b8b8b;
   border: 1px solid #8b8b8b;
-  margin:0;
+  margin:0;  
 }
 
+.dot_line{
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
 
 .sidebar-nav li a {
-  color: #a9e0cb;
   display: table;
   text-decoration: none;
 }
 
 .sidebar-nav li a:hover {
   color: #ffffff;
-  background: rgba(255,255,255,0.2);
   text-decoration: none;
 }
 
