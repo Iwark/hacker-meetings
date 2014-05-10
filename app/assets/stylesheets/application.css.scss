@@ -14,17 +14,24 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
 
- $sidebar-width: 180px;
+$header-height: 50px;
+$sidebar-width: 180px;
 
- body {
+body {
   -webkit-text-size-adjust: 100%;
+}
+
+.navbar{
+  height: $header-height;
+  transition: all 0.4s ease 0s;
+  overflow: hidden;
 }
 
 #wrapper {
   background-color:gray;
-  margin-top: 51px;
+  margin-top: $header-height;
 
   .sidebar{
     position: fixed; // 絶対固定座標
@@ -35,7 +42,6 @@
     background-color: #6b6b6b;
     overflow-y: auto;
     z-index: 1000;
-    transition: all 0.4s ease 0s;
 
     .sidebar-nav {
       position: absolute;
@@ -100,23 +106,44 @@ hr {
   }
 }
 
-#menu-toggle {
+.brand {
+  float: left;
+}
+
+.menu-button {
   display: none;
+  float: left;
+  margin: 8px;
 }
 
 @media (max-width:767px) {
 
+  .navbar{
+    &.active {
+      margin-left:$sidebar-width;
+      transition: all 0.4s ease 0s;
+    }
+  }
+
   #wrapper {
     .sidebar{
+      transition: left 0.4s ease 0s;
+      margin-top: -$header-height;
       left: 0;
+      &.active {
+        left: $sidebar-width;
+        width: $sidebar-width;
+        transition: left 0.4s ease 0s;
+      }
     }
 
     .main {
       padding-left: 0;
     }
+
   }
 
-  #menu-toggle {
+  .menu-button {
     display: inline-block;
   }
 

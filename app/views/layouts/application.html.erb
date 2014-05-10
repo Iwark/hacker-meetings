@@ -8,13 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
   <!-- Header -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <div class="navbar-left">
-        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-        <%= link_to 'HackerMeetings',root_path, class:"nav navbar-brand" %>
+        <a href="#" class="btn btn-default menu-button">三</a>
+        <div class="brand">
+          <%= link_to 'HackerMeetings',root_path, class:"nav navbar-brand" %>
+        </div>
       </div>
       <% if user_signed_in? %>
         <div class="navbar-right">

@@ -16,9 +16,10 @@
 //= require_tree .
 $(function(){
 
-  $("#menu-toggle").click(function(e) {
+  $(".menu-button").click(function(e) {
     e.preventDefault();
-    $("#wrapper").toggleClass("active");
+    $(".navbar").toggleClass("active");
+    $(".sidebar").toggleClass("active");
   });
 
 });
