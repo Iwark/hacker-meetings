@@ -1,3 +1,13 @@
+.meeting{
+	background-color: green;
+	overflow: hidden;
+	margin-top: 20px;
+	padding: 0px;
+	border-radius: 16px;
+	border: 2px solid;
+	border-color: #3aa480
+}
+
 #meeting_body{
 	line-height: 1.5em;
 	resize: none;
@@ -31,15 +41,6 @@
 	margin-bottom:-10000px;
 }
 
-
-.meeting{
-	overflow: hidden;
-	margin-top: 20px;
-	padding: 0px;
-	border-radius: 16px;
-	border: 2px solid;
-	border-color: #3aa480
-}
 .current_members_num{
 	text-align: center;
 	font-size: 60px;

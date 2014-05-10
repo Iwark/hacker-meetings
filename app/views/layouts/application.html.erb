@@ -27,9 +27,11 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper" style="background-color:#6b6b6b;">
+    <div class="sidebar">
       <ul class="sidebar-nav">
-        <li><%= image_tag("icon_event.png", class:"sidebar_icon") %><a href="#" class="sidebar_text">Event</a>
+        <li>
+          <%= image_tag("icon_event.png", class:"sidebar_icon") %>
+          <a href="#" class="sidebar_text">Event</a>
         </li>
         <li> <a href="#">Calendar</a>
         </li>
@@ -41,9 +43,8 @@
         </li>
       </ul>
     </div>
-
-    <!-- Container -->
-    <div class="container">
+    <!-- main -->
+    <div class="main">
       <%# ここに各ページの実際のコンテンツが入ってくる %>
       <%= yield %>
     </div>
