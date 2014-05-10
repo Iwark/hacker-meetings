@@ -48,14 +48,25 @@ class MeetingsController < ApplicationController
 	# Meetingに参加するアクション
 	# post /meetings/join/1
 	def join
-		@meeting.users << current_user unless @meeting.users.include?(current_user)
+		unless @meeting.users.include?(current_user)
+			member = Member.new
+			member.meeting_id = @meeting.id
+			member.user_id = current_user.id
+			member.joined_at = Datetime.current
+			member.status = "join"
+			member.save
+		end
 		redirect_to :back #前のページへリダイレクト
 	end
 
 	# Meetingへの参加をキャンセルするアクション
 	# delete /meetings/cancel/1
 	def cancel
-		@meeting.users.delete(current_user) if @meeting.users.include?(current_user)
+		member = @meeting.members.find_by(user_id:current_user.id)
+		if member
+			member.status = "cancel"
+			member.save
+		end
 		redirect_to :back #前のページへリダイレクト
 	end
 
