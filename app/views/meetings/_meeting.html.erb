@@ -12,7 +12,7 @@
         イベント：<%= meeting.title %>
       </div>
       <div class="col-xs-4 col-sm-12">
-        日時：<%= meeting.start_date %> - <%= meeting.end_date %>
+        日時：<%= meeting.start_date.strftime('%Y年%m月%d日 %H:%M') %> - <%= meeting.end_date.strftime('%H:%M') %>
       </div>
       <div class="col-xs-4 col-sm-12">
         場所: <%= meeting.place %>
