@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508010145) do
+ActiveRecord::Schema.define(version: 20140510105227) do
 
   create_table "meetings", force: true do |t|
     t.string   "title",      null: false
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 20140508010145) do
   end
 
   add_index "meetings", ["user_id"], name: "index_meetings_on_user_id"
+
+  create_table "members", force: true do |t|
+    t.integer  "meeting_id", null: false
+    t.integer  "user_id",    null: false
+    t.datetime "joined_at",  null: false
+    t.string   "status",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "members", ["meeting_id"], name: "index_members_on_meeting_id"
+  add_index "members", ["user_id", "meeting_id"], name: "index_members_on_user_id_and_meeting_id"
+  add_index "members", ["user_id"], name: "index_members_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

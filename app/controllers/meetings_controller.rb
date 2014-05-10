@@ -4,7 +4,7 @@
 # Meetingを管理するコントローラ
 class MeetingsController < ApplicationController
 	before_filter :authenticate_user!
-	before_action :set_meeting, only: [:show, :edit, :update, :destroy]
+	before_action :set_meeting, only: [:show, :edit, :update, :destroy, :join, :cancel]
 	# Meetings一覧を表示するアクション
 	# get /meetings
 	def index
@@ -43,6 +43,20 @@ class MeetingsController < ApplicationController
 	# Meetingを破棄するアクション
 	# delete /meetings/1
 	def destroy
+	end
+
+	# Meetingに参加するアクション
+	# post /meetings/join/1
+	def join
+		@meeting.users << current_user unless @meeting.users.include?(current_user)
+		redirect_to :back #前のページへリダイレクト
+	end
+
+	# Meetingへの参加をキャンセルするアクション
+	# delete /meetings/cancel/1
+	def cancel
+		@meeting.users.delete(current_user) if @meeting.users.include?(current_user)
+		redirect_to :back #前のページへリダイレクト
 	end
 
 	private
