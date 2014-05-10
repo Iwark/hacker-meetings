@@ -43,39 +43,45 @@ body {
 
 .sidebar-nav {
   position: absolute;
-  top: 0;
-  width: 140px;
+  top: 20px;
+  width: 180px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .sidebar-nav li {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 50px;
+  padding: 14px;
 }
 
-.icon_feed {
-  background-image: image-url("icon_feed.jpg")
+.icon_event {
+  background-color: #548575;
 }
 .icon_calendar {
-  background-image: image-url("icon_calendar.jpg")
+  background-color: #68a58f;
 }
-.icon_friend {
-  background-image: image-url("icon_friend.jpg")
+.icon_my_event {
+  background-color: #548575;
 }
-.icon_setting {
-  background-image: image-url("icon_setting.jpg")
+.icon_member {
+  background-color: #68a58f;
+}
+.icon_account {
+  background-color: #548575;
 }
 
+
+
 .sidebar-nav li a {
-  color: #999999;
-  display: block;
+  color: #a9e0cb;
+  display: table;
   text-decoration: none;
 }
 
 .sidebar-nav li a:hover {
-  color: #fff;
+  color: #ffffff;
   background: rgba(255,255,255,0.2);
   text-decoration: none;
 }

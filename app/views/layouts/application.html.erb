@@ -9,8 +9,6 @@
 </head>
 <body>
 
-  <% if user_signed_in? %>
-
   <!-- Header -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
@@ -18,36 +16,35 @@
         <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
         <%= link_to 'HackerMeetings',root_path, class:"nav navbar-brand" %>
       </div>
-      <div class="navbar-right">
-        <%= link_to image_tag("new_event.jpg"), new_meeting_path %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="navbar-right">
+          <%= link_to image_tag("new_event.jpg"), new_meeting_path %>
+        </div>
+      <% end %>
     </div>
   </nav>
 
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper" style="background-color:#6b6b6b;">
       <ul class="sidebar-nav">
-        <li class="icon_feed"><a href="#"></a>
+        <li class="icon_event"><a href="#">Event</a>
         </li>
-        <li class="icon_calendar"><a href="#"></a>
+        <li class="icon_calendar"><a href="#">Calendar</a>
         </li>
-        <li class="icon_friend"><a href="#"></a>
+        <li class="icon_my_event"><a href="#">Myイベント</a>
         </li>
-        <li class="icon_setting"><a href="#"></a>
+        <li class="icon_member"><a href="#">Member</a>
+        </li>
+        <li class="icon_account"><a href="#">Account</a>
         </li>
       </ul>
     </div>
 
-  <% else %>
-
-  <div>
-
-  <% end %>
-
     <!-- Container -->
     <div class="container">
+      <%# ここに各ページの実際のコンテンツが入ってくる %>
       <%= yield %>
     </div>
 

@@ -1,17 +1,29 @@
 <div class="row meeting">
-  <div class="col-xs-12 col-sm-8">
-    <%= image_tag meeting.image_url(:thumb).to_s, class:"img-responsive" %>
+  <div class="col-xs-10">
+    <div class="col-xs-12 col-sm-7">
+      <div class="col-xs-2" style="background-color:red;">aaaaaa
+      </div>
+      <div class="col-xs-10" style="background-color:blue;">bbbbbbb
+      </div>
+      <%= image_tag meeting.image_url(:thumb).to_s, class:"img-responsive" %>
+    </div>
+    <div class="col-xs-12 col-sm-5">
+      <div class="col-xs-4 col-sm-12">
+        イベント：<%= meeting.title %>
+      </div>
+      <div class="col-xs-4 col-sm-12">
+        日時：<%= meeting.start_date %> - <%= meeting.end_date %>
+      </div>
+      <div class="col-xs-4 col-sm-12">
+        場所: <%= meeting.place %>
+      </div>
+    </div>
+    <div class="col-xs-12 meeting_body"><%= meeting.body %></div> 
   </div>
-  <div class="col-xs-12 col-sm-4">
-    <div>
-      <%= meeting.title %>
-    </div>
-    <div>
-      <%= meeting.start_date %> - <%= meeting.end_date %>
-    </div>
-    <div>
-      <%= meeting.place %>
-    </div>
+  <div class="col-xs-2" style="background-color:red;">
+    <div class="current_members_num">6</div>
+    <button>＋参加する</button>
+    <div>参加メンバー</div>
+    <div class="current_members">aaa</div>
   </div>
-  <div class="col-xs-12 meeting_body"><%= meeting.body %></div>
 </div>
