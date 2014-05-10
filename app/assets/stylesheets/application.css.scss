@@ -53,8 +53,13 @@ body {
 
       li {
         width: $sidebar-width;
-        height: 50px;
+        height: 80px;
         padding: 14px;
+
+        &.nav_item_event{
+          background-image: image-url("nav_item_active.png");
+        }
+
         .sidebar_icon{
           float:left;
         }
