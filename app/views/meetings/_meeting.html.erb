@@ -31,7 +31,13 @@
   </div>
   <div class="col-xs-2 meeting_members_info"">
     <div class="current_members_num">6</div>
-    <button>＋参加する</button>
+    <% if meeting.user == current_user %>
+      <%# link_to 'イベントをキャンセルする', meetings_remove_path(meeting) %>
+    <% elsif meeting.users.include?(current_user) %>
+      <%= link_to '参加をキャンセルする', meetings_cancel_path(meeting), method: :delete %>
+    <% else %>
+      <%= link_to '参加する', meetings_join_path(meeting) %>
+    <% end %>
     <div>参加メンバー</div>
     <div class="current_members">aaa</div>
   </div>

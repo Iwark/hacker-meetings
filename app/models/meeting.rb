@@ -22,4 +22,7 @@ class Meeting < ActiveRecord::Base
   validates_presence_of :title, :body, :user_id, :start_date, :end_date, :place
 
   belongs_to :user
+  has_many :members
+  has_many :users, through: :members
+
 end
