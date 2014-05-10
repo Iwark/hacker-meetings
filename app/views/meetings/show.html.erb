@@ -31,7 +31,7 @@
     <div class="current_members_num">6</div>
     <% if @meeting.user == current_user %>
     <%# link_to 'イベントをキャンセルする', meetings_remove_path(@meeting) %>
-    <% elsif @meeting.users.include?(current_user) %>
+    <% elsif @meeting.join_members.include?(current_user) %>
     <%= link_to '参加をキャンセルする', meetings_cancel_path(@meeting), method: :delete %>
     <% else %>
     <%= link_to '参加する', meetings_join_path(@meeting), method: :post %>
