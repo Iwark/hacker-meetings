@@ -1,6 +1,11 @@
 //= require marked
 
 $( () ->
+
+	marked.setOptions
+		breaks: true
+		sanitize: true
+
 	if $(".preview").size() > 0
 		$(".preview").html marked($(".meeting_body").val())
 	if $("textarea.meeting_body").size() > 0
