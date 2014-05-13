@@ -23,6 +23,7 @@ gem 'omniauth-facebook'
 gem 'rb-readline'
 
 gem 'marked-rails'
+gem 'highlight_js-rails4'
 
 group :development, :test do
   gem 'sqlite3'

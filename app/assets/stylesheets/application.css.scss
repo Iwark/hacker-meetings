@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require highlight_js/github
  */
 
 @import "bootstrap";
@@ -152,4 +153,8 @@ hr {
     display: inline-block;
   }
 
+}
+
+pre code{
+  background: transparent !important;
 }
