@@ -19,11 +19,14 @@
 $(function(){
 
   $(".menu-button").click(function(e) {
-  	console.log("aaa");
     e.preventDefault();
     $(".navbar").toggleClass("active");
     $(".sidebar").toggleClass("active");
     $(".main").toggleClass("active");
+  });
+
+  $(".link-new-meeting").click(function(e) {
+  	window.location.href = '/meetings/new';
   });
 
 });

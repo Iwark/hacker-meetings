@@ -21,11 +21,13 @@
       </div>
       <% if user_signed_in? %>
         <div class="navbar-right">
-          <div class="plus-new-meeting">
-            +
-          </div>
           <div class="link-new-meeting">
-            <%= link_to '新規イベント作成', new_meeting_path %>
+            <div class="plus-new-meeting">
+              +
+            </div>
+            <div class="text-new-meeting">
+              <%= link_to '新規イベント作成', new_meeting_path %>
+            </div>
           </div>
         </div>
       <% end %>

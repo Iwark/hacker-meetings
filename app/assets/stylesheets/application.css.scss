@@ -71,26 +71,27 @@ body {
     .navbar-right{
       padding-top:($header-height - 30) / 2;
       margin-right:40px;
-      cursor: pointer;
-      .plus-new-meeting{
-        float:left;
-        margin-top: 1px;
-        color: $header-color;
-        font-size: 14px;
-        background: #fff;
-        width: 20px;
-        text-align:center;
-        border-radius: 4px;
-      }
       .link-new-meeting{
-        float:left;
-        margin-left: 6px;
-        a{
-          color: #fff;
-          font-size: 16px;
+        cursor: pointer;
+        .plus-new-meeting{
+          float:left;
+          margin-top: 1px;
+          color: $header-color;
+          font-size: 14px;
+          background: #fff;
+          width: 20px;
+          text-align:center;
+          border-radius: 4px;
+        }
+        .text-new-meeting{
+          float:left;
+          margin-left: 6px;
+          a{
+            color: #fff;
+            font-size: 16px;
+          }
         }
       }
-      
     }
   }
 }
@@ -205,8 +206,22 @@ hr {
     // }
     .navbar-header{
       .navbar-left{
+        .header-icon {
+          display: none;
+        }
+        // .brand {
+        //   display: none;
+        // }
         .menu-button {
           display: inline-block;
+        }
+      }
+      .navbar-right{
+        float: right !important;
+        .link-new-meeting{
+          .text-new-meeting{
+            display: none;
+          }
         }
       }
     }
@@ -231,10 +246,7 @@ hr {
     .main {
       margin-left:0;
       &.active {
-        -webkit-transform: translate3d($sidebar-width - $sidebar-lap, 0px, 0px);
-        -moz-transform: translate3d($sidebar-width - $sidebar-lap, 0px, 0px);
-        transform: translate3d($sidebar-width - $sidebar-lap, 0px, 0px);
-        
+        margin-left: $sidebar-width - $sidebar-lap;
       }
     }
 
