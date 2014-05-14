@@ -19,6 +19,7 @@
 $(function(){
 
   $(".menu-button").click(function(e) {
+  	console.log("aaa");
     e.preventDefault();
     $(".navbar").toggleClass("active");
     $(".sidebar").toggleClass("active");
