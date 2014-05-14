@@ -12,14 +12,21 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <div class="navbar-left">
-        <a href="#" class="btn btn-default menu-button">三</a>
+        <a href="#" class="btn btn-default menu-button">≡</a>
+        <div class="header-icon">
+        </div>
         <div class="brand">
-          <%= link_to 'HackerMeetings',root_path, class:"nav navbar-brand" %>
+          <%= link_to 'Hacker-Meetings',root_path, class:"nav navbar-brand" %>
         </div>
       </div>
       <% if user_signed_in? %>
         <div class="navbar-right">
-          <%= link_to image_tag("new_event.jpg"), new_meeting_path %>
+          <div class="plus-new-meeting">
+            +
+          </div>
+          <div class="link-new-meeting">
+            <%= link_to '新規イベント作成', new_meeting_path %>
+          </div>
         </div>
       <% end %>
     </div>
@@ -30,11 +37,11 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <ul class="sidebar-nav">
-        <li class="nav_item_event">
-          <%= image_tag("icon_event.png", class:"sidebar_icon") %>
-          <a href="#" class="sidebar_text">Event</a>
+        <li class="nav-item-active">
+          <a href="#">Event</a>
         </li>
-        <li> <a href="#">Calendar</a>
+        <li>
+          <a href="#">Calendar</a>
         </li>
         <li><a href="#">Myイベント</a>
         </li>
@@ -46,8 +53,12 @@
     </div>
     <!-- main -->
     <div class="main">
-      <%# ここに各ページの実際のコンテンツが入ってくる %>
-      <%= yield %>
+      <div class="main_contents">
+        <div class="container">
+          <%# ここに各ページの実際のコンテンツが入ってくる %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
   </div>

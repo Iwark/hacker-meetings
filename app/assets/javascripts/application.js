@@ -22,6 +22,7 @@ $(function(){
     e.preventDefault();
     $(".navbar").toggleClass("active");
     $(".sidebar").toggleClass("active");
+    $(".main").toggleClass("active");
   });
 
 });
