@@ -1,43 +1,58 @@
-<div class="row meeting">
-  <div class="col-xs-10">
-    <div class="meeting_title">
-      <%= meeting.title %>
-    </div>
-    <hr />
-    <div class="col-xs-12 col-sm-6">
-      <%= image_tag meeting.image_url(:thumb).to_s, class:"img-responsive meeting_image" %>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <div class="col-xs-4 col-sm-12 meeting_info">
-        日時：
-        <hr class="dot_line" />
-        <div><%= meeting.start_date.strftime('%Y年%m月%d日 %H:%M') %> - <%= meeting.end_date.strftime('%H:%M') %>
+<div class="col-xs-12 col-sm-6">
+  <div class="meeting" meeting-id="<%= meeting.id %>">
+    <div class="space">
+      <div class="meeting_background">
+        <%= image_tag meeting.image_url(:thumb).to_s, class:"img-responsive" %>
+        <div class="meeting_contents">
+          <div class="meeting_box">
+            日時
+            <hr />
+            <div><%= meeting.start_date.strftime('%Y年%m月%d日 %H:%M') %> - <%= meeting.end_date.strftime('%H:%M') %>
+            </div>
+          </div>
+          <div class="meeting_box">
+            主催者
+            <hr />
+            <div><%= meeting.user.name %></div>
+          </div>
         </div>
       </div>
-      <div class="col-xs-4 col-sm-12 meeting_info">
-        場所: 
-        <hr class="dot_line" />
-        <div><%= meeting.place %>
-        </div>
-      </div>
-      <div class="col-xs-4 col-sm-12 meeting_info">
-        主催者:
-        <hr class="dot_line" />
-        <div><%= meeting.user.name %></div>
+      <div class="meeting_title">
+        <%= meeting.title %>
       </div>
     </div>
-    <div class="col-xs-12 meeting_body"><%= meeting.body %></div> 
-  </div>
-  <div class="col-xs-2 meeting_members_info"">
-    <div class="current_members_num">6</div>
-    <% if meeting.user == current_user %>
-      <%# link_to 'イベントをキャンセルする', meetings_remove_path(meeting) %>
-    <% elsif meeting.users.include?(current_user) %>
-      <%= link_to '参加をキャンセルする', meetings_cancel_path(meeting), method: :delete %>
-    <% else %>
-      <%= link_to '参加する', meetings_join_path(meeting) %>
-    <% end %>
-    <div>参加メンバー</div>
-    <div class="current_members">aaa</div>
-  </div>
+    <div class="white_hover">
+    </div>
+
+<!-- <div class="meeting_new"></div>
+<div class="meeting_image">
+<%= image_tag meeting.image_url(:thumb).to_s, class:"img-responsive meeting_image" %>
+</div>
+<div class="meeting_title">
+<%= meeting.title %>
+</div> -->
+<!-- <div class="col-xs-12 col-sm-6">
+
+</div>
+<div class="col-xs-12 col-sm-6">
+<div class="col-xs-4 col-sm-12 meeting_info">
+日時：
+<hr class="dot_line" />
+<div><%= meeting.start_date.strftime('%Y年%m月%d日 %H:%M') %> - <%= meeting.end_date.strftime('%H:%M') %>
+</div>
+</div>
+<div class="col-xs-4 col-sm-12 meeting_info">
+場所: 
+<hr class="dot_line" />
+<div><%= meeting.place %>
+</div>
+</div>
+<div class="col-xs-4 col-sm-12 meeting_info">
+主催者:
+<hr class="dot_line" />
+<div><%= meeting.user.name %></div>
+</div>
+</div>
+<div class="col-xs-12 meeting_body"><%= meeting.body %></div> -->
+</div>
 </div>

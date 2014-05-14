@@ -2,6 +2,9 @@
 
 $( () ->
 
+	$(".meeting").click (e) ->
+		window.location.href = "/meetings/" + $(this).attr("meeting-id")
+
 	marked.setOptions
 		breaks: true
 		sanitize: true
