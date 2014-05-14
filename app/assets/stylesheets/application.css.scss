@@ -262,20 +262,12 @@ hr {
   }
 }
 
-@media (min-width:992px) {
-  .main_contents {
-    .container {
-      width: 100%;
-    }
-  }
-}
-
-@media (min-width:1200px) {
-  .container {
-    width: 100%;
-  }
-}
-
 pre code{
   background: transparent !important;
+}
+
+input[type=text], textarea{
+  opacity: 0.90;
+  color: black !important;
+  font-size: 17px !important;
 }
