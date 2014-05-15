@@ -27,17 +27,32 @@ class MeetingsController < ApplicationController
 	def create
 		@meeting = Meeting.new(meeting_params)
 		@meeting.user = current_user
-
 		if @meeting.save
+			member = Member.new
+			member.meeting_id = @meeting.id
+			member.user_id = current_user.id
+			member.joined_at = DateTime.now
+			member.status = "join"
+			member.save
 			redirect_to meetings_path
 		else
 			render action: 'new'
 		end
 	end
 
-	# Meetingの情報を更新するアクション
+	# Meetingの情報を更新するページへのアクション
 	# patch /meetings/1
 	def edit
+	end
+
+	# Meetingの情報を更新するアクション
+	# patch /meetings/1
+	def update
+		if @meeting.update(meeting_params)
+			redirect_to meeting_path(@meeting)
+		else
+			render action: 'edit'
+		end
 	end
 
 	# Meetingを破棄するアクション

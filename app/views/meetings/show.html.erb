@@ -1,9 +1,14 @@
 <div class="show">
   <div class="row meeting">
-    <div class="col-xs-12 col-sm-10 meeting-main">
+    <div class="col-xs-12 col-sm-9 meeting-main">
       <div class="meeting-title">
         <%= @meeting.title %>
       </div>
+      <% if user_signed_in? && @meeting.user == current_user %>
+        <div class="edit-meeting">
+          <%= link_to '[編集]', edit_meeting_path(@meeting) %>
+        </div>
+      <% end %>
       <hr />
       <div class="col-xs-12 col-sm-6 meeting-image">
         <%= image_tag @meeting.image_url(:thumb).to_s, class:"img-responsive" %>
@@ -17,7 +22,11 @@
         <div class="col-xs-12 meeting_info">
           場所:
           <hr class="dot_line" />
-          <div><%= @meeting.place %>
+          <div class="meeting-place">
+            <%= @meeting.place %>
+          </div>
+          <div class="meeting-place-info">
+            <%= @meeting.place_info %>
           </div>
         </div>
         <div class="col-xs-12 meeting_info">
@@ -35,18 +44,32 @@
       </div>
       <div class="col-xs-12 meeting_body"><%= @meeting.body %></div> 
     </div>
-    <div class="col-xs-12 col-sm-2 meeting_members_info">
-      <div class="current_members_num">60</div>
-      <% if !user_signed_in? %>
-      <%= link_to "イベントに参加する為にはログインをしてください", user_omniauth_authorize_path(:facebook) %>
-      <% elsif @meeting.user == current_user %>
-      <%# link_to 'イベントをキャンセルする', meetings_remove_path(@meeting) %>
-      <% elsif @meeting.join_members.include?(current_user) %>
-      <%= link_to '参加をキャンセルする', meetings_cancel_path(@meeting), method: :delete %>
-      <% else %>
-      <%= link_to '参加する', meetings_join_path(@meeting), method: :post %>
-      <% end %>
-      <div>参加者(<%= @meeting.join_members.length %>)</div>
+    <div class="col-xs-12 col-sm-3 meeting_members_info">
+      <div class="action-area">
+        <% if !user_signed_in? %>
+        <%= link_to "ログインして参加", user_omniauth_authorize_path(:facebook), class:"btn btn-default join-button" %>
+        <% elsif @meeting.user != current_user %>
+        <%# link_to 'イベントをキャンセルする', meetings_remove_path(@meeting) %>
+        <% elsif @meeting.join_members.include?(current_user) %>
+        <%= link_to 'キャンセル', meetings_cancel_path(@meeting), class:"btn btn-default join-button", method: :delete %>
+        <% else %>
+        <%= link_to '参加する', meetings_join_path(@meeting), class:"btn btn-default join-button", method: :post %>
+        <% end %>
+      </div>
+      <div class="attendance-title">
+        参加者
+      </div>
+      <div class="attendance">
+        (<span class="members-length">
+          <%= @meeting.join_members.length %>
+        </span>
+         / 
+        <span class="capacity">
+          <%= @meeting.capacity %>
+        </span>
+        <span class="unit">人</span>)
+      </div>
+      <hr class="dot_line" />
       <div class="current_members">
         <% @meeting.join_members.each do |member| %>
         <div class="user-info col-xs-6 col-sm-12">

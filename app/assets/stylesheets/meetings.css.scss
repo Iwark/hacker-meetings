@@ -60,10 +60,13 @@
 			left: 0px;
 			bottom:20px;
 			width: 100%;
-			font-size: 20px;
+			font-size: 18px;
 			background: #f25757;
 			color: white;
-			padding-left: 40px;
+			padding-left: 28px;
+			padding-right: 28px;
+			height: 50px;
+			overflow: hidden;
 		}
 		.white_hover{
 			position: absolute;
@@ -79,7 +82,7 @@
 	}
 }
 .show{
-	padding:10px;
+	padding:30px;
 	.meeting{
 		background:rgba(255, 255, 255, 0.7);
 		border-radius: 16px;
@@ -117,8 +120,15 @@
 		.meeting-main{
 			padding: 10px;
 			.meeting-title{
+				float:left;
 				margin-left: 10px;
 				font-size: 28px;
+			}
+			.edit-meeting{
+				float:left;
+				margin-top: 10px;
+				margin-left: 10px;
+				font-size: 16px;
 			}
 			.meeting-image{
 				margin-top:15px;
@@ -130,6 +140,13 @@
 				.meeting_info{
 					margin-top:15px;
 					margin-bottom:5px;
+					.meeting-place{
+
+					}
+					.meeting-place-info{
+						margin-top: 2px;
+						font-size:12px;
+					}
 				}
 			}
 			.meeting_body{
@@ -146,14 +163,63 @@
 			border-color: #3aa480;
 			padding-bottom:10000px;
 			margin-bottom:-10000px;
+			hr {
+				background: transparent;
+			}
+			.action-area{
+				position:relative;
+				margin-top: 20px;
+				height: 40px;
+				.join-button{
+					position: absolute;
+					left: 50%;
+					-webkit-transform: translate3d(-50%, 0, 0px);
+      		-moz-transform: translate3d(-50%, 0, 0px);
+      		transform: translate3d(-50%, 0, 0px);
+      		background: #f25757;
+      		border: 1px solid #fff;
+      		color: #fff;
+      		&:hover{
+      			background: #fff;
+      			border: 1px solid #f25757;
+      			color: #f25757;
+      		}
+				}
+			}
+			.attendance-title{
+				float:left;
+				margin-left: 4px;
+				padding-top: 14px;
+			}
+			.attendance{
+				float:left;
+				margin-left: 8px;
+				.members-length{
+					padding-left: 2px;
+					padding-top: 2px;
+					font-size: 28px;
+				}
+				.capacity{
+					font-size:18px;
+				}
+				.unit{
+					font-size:12px;
+					margin-left:2px;
+					margin-right:4px;
+				}
+			}
 			.current_members{
 				.user-info{
 					width: 100%;
 					padding-left:10px;
 					.user-info-image{
-
+						float:left;
+						margin-left: 10px;
 					}
 					.user-info-name{
+						float:left;
+						margin-left: 15px;
+						margin-right: 5px;
 					}
 				}
 			}
@@ -161,25 +227,77 @@
 	}
 }
 
+.meeting-form{
+	position: relative;
+	overflow: hidden;
+	margin: 20px;
+	border-radius: 16px;
+	background: rgba(255,255,255,0.8);
+	padding: 20px;
+	form{
+		.start-date{
+			float:left;
+		}
+		.dash{
+			float:left;
+			margin-left: 8px;
+			margin-right: 8px;
+		}
+		.end-date{
+			float:left;
+		}
+		textarea{
+			height: 180px;
+			resize: none;
+		}
+		.preview{
+			background: #fff;
+			border-radius: 16px;
+			word-break:break-all;
+			padding: 1px 15px;
+			margin-bottom: 10px;
+		}
+		.create-button-area{
+			height: 50px;
+			.create-button{
+				position: absolute;
+				left: 50%;
+				-webkit-transform: translate3d(-50%, 0, 0px);
+				-moz-transform: translate3d(-50%, 0, 0px);
+				transform: translate3d(-50%, 0, 0px);
+				background: #f25757;
+				border: 1px solid #fff;
+				color: #fff;
+				&:hover{
+					background: #fff;
+					border: 1px solid #f25757;
+					color: #f25757;
+				}
+			}
+		}
+	}
+}
 @media (max-width:767px){
 	.show{
 		.meeting{
 			.meeting_members_info{
 				border-left-width: 0px;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			.meeting-main{
+				.meeting_body{
+					zoom: 75%;
+				}
+			}
+			
+		}
+	}
+	.meeting-form{
+		form{
+			.preview{
+				zoom: 75%;
 			}
 		}
 	}
-}
-
-.current_members_num{
-	text-align: center;
-	font-size: 60px;
-}
-
-.preview{
-	margin: 0;
-	background-color: #eee;
-	zoom:75%;
-	width:100%;
-	word-break:break-all;
 }

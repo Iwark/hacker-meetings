@@ -79,6 +79,7 @@ body {
       margin-right:40px;
       .link-new-meeting{
         cursor: pointer;
+        height: $header-height - 30;
         .plus-new-meeting{
           float:left;
           margin-top: 1px;
@@ -92,10 +93,8 @@ body {
         .text-new-meeting{
           float:left;
           margin-left: 6px;
-          a{
-            color: #fff;
-            font-size: 16px;
-          }
+          color: #fff;
+          font-size: 16px;
         }
       }
     }
@@ -205,6 +204,7 @@ hr {
   background-color: #8b8b8b;
   border: 1px solid #000;
   margin:0;
+  clear: both;
 
   &.dot_line{
     border: 0;
