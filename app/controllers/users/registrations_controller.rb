@@ -33,6 +33,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if !user_signed_in?
       session[:user_return_to] = env['PATH_INFO']
       redirect_to user_omniauth_authorize_path(:facebook)
+    else
+      super(options)
     end
   end
 
