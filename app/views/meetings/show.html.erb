@@ -1,6 +1,6 @@
 <div class="show">
   <div class="row meeting">
-    <div class="col-xs-10">
+    <div class="col-xs-12 col-sm-10 meeting-main">
       <div class="meeting-title">
         <%= @meeting.title %>
       </div>
@@ -9,18 +9,18 @@
         <%= image_tag @meeting.image_url(:thumb).to_s, class:"img-responsive" %>
       </div>
       <div class="col-xs-12 col-sm-6 meeting-desc">
-        <div class="col-xs-12 col-sm-12 meeting_info">
+        <div class="col-xs-12 meeting_info">
           日時：
           <hr class="dot_line" />
           <%= @meeting.start_date.strftime('%Y年%m月%d日 %H:%M') %> - <%= @meeting.end_date.strftime('%H:%M') %>
         </div>
-        <div class="col-xs-12 col-sm-12 meeting_info">
+        <div class="col-xs-12 meeting_info">
           場所:
           <hr class="dot_line" />
           <div><%= @meeting.place %>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-12 meeting_info">
+        <div class="col-xs-12 meeting_info">
           主催者:
           <hr class="dot_line" />
           <div class="user-info">
@@ -35,8 +35,8 @@
       </div>
       <div class="col-xs-12 meeting_body"><%= @meeting.body %></div> 
     </div>
-    <div class="col-xs-2 meeting_members_info">
-      <div class="current_members_num">6</div>
+    <div class="col-xs-12 col-sm-2 meeting_members_info">
+      <div class="current_members_num">60</div>
       <% if !user_signed_in? %>
       <%= link_to "イベントに参加する為にはログインをしてください", user_omniauth_authorize_path(:facebook) %>
       <% elsif @meeting.user == current_user %>
@@ -46,10 +46,10 @@
       <% else %>
       <%= link_to '参加する', meetings_join_path(@meeting), method: :post %>
       <% end %>
-      <div>参加メンバー</div>
+      <div>参加者(<%= @meeting.join_members.length %>)</div>
       <div class="current_members">
         <% @meeting.join_members.each do |member| %>
-        <div class="user-info">
+        <div class="user-info col-xs-6 col-sm-12">
           <div class="user-info-image">
             <img src=<%= "https://graph.facebook.com/"+@meeting.user.uid+"/picture" %> />
           </div>

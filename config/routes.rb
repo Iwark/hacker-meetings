@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root 'welcome#index'
+  root 'meetings#index'
 
   get 'meetings', to: "meetings#index", as: "user_root"
   post 'meetings/join/:id', to:"meetings#join", as: "meetings_join"

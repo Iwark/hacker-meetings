@@ -18,6 +18,10 @@
 
 $(function(){
 
+  $(".link-new-meeting").click(function(e){
+    window.location.href = "/meetings/new";
+  });
+
   $(".menu-button").click(function(e) {
     e.preventDefault();
     $(".navbar").toggleClass("active");
@@ -25,8 +29,8 @@ $(function(){
     $(".main").toggleClass("active");
   });
 
-  $(".sidebar-nav li").click(function(e) {
-  	window.location.href = '/meetings/new';
+  $(".meetings-path").click(function(e) {
+  	window.location.href = '/meetings';
   });
 
 });

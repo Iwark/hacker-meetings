@@ -83,51 +83,89 @@
 	.meeting{
 		background:rgba(255, 255, 255, 0.7);
 		border-radius: 16px;
-		padding: 10px;
 		overflow: hidden;
-		.meeting-title{
-			margin-left: 10px;
-			font-size: 28px;
-		}
-		.meeting-image{
-			margin-top:15px;
-			img{
+
+		.user-info{
+			position:relative;
+			margin: 0;
+			margin-top:4px;
+			height: 50px;
+			overflow: hidden;
+			padding: 0;
+			.user-info-image{
+				position:absolute;
+				top: 0;
+				left: 0;
+				width:50px;
+				height:50px;
+			}
+			.user-info-name{
+				position:absolute;
 				margin: 0 auto;
+				top: 50%;
+				-webkit-transform: translate3d(0, -50%, 0px);
+      	-moz-transform: translate3d(0, -50%, 0px);
+      	transform: translate3d(0, -50%, 0px);
+				left: 54px;
+				right: 4px;
+				font-size: 14px;
+				line-height: 14px;
+				overflow:hidden;
 			}
-			// background:red;
 		}
-		.meeting-desc{
-			// background:blue;
-			.meeting_info{
+
+		.meeting-main{
+			padding: 10px;
+			.meeting-title{
+				margin-left: 10px;
+				font-size: 28px;
+			}
+			.meeting-image{
 				margin-top:15px;
-				margin-bottom:5px;
+				img{
+					margin: 0 auto;
+				}
 			}
-		}
-		.meeting_body{
-			margin-top: 10px;
-			background: #fff;
-			border-radius: 16px;
-			word-break:break-all;
+			.meeting-desc{
+				.meeting_info{
+					margin-top:15px;
+					margin-bottom:5px;
+				}
+			}
+			.meeting_body{
+				margin-top: 10px;
+				background: #fff;
+				border-radius: 16px;
+				word-break:break-all;
+			}
 		}
 		.meeting_members_info{
+			padding: 0;
 			border: 0px solid;
 			border-left-width: 2px;
 			border-color: #3aa480;
 			padding-bottom:10000px;
 			margin-bottom:-10000px;
-		}
-		.user-info{
-			margin-top:4px;
-			height: 50px;
-			overflow: hidden;
-			.user-info-image{
-				float:left;
-				width:50px;
-				height:50px;
+			.current_members{
+				.user-info{
+					width: 100%;
+					padding-left:10px;
+					.user-info-image{
+
+					}
+					.user-info-name{
+					}
+				}
 			}
-			.user-info-name{
-				float:left;
-				height: 50px;
+		}
+	}
+}
+
+@media (max-width:767px){
+	.show{
+		.meeting{
+			.meeting_members_info{
+				border-left-width: 0px;
 			}
 		}
 	}

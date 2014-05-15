@@ -139,7 +139,7 @@ body {
         padding-left: 24px;
         padding-top: 27px;
         cursor: pointer;
-        a {
+        p {
           display: table;
           text-decoration: none;
           color: #666666;
@@ -156,14 +156,14 @@ body {
 
         &.nav-item-active{
           background: image-url("nav_item_active.png");
-          a {
+          p {
             color: #fff;
           }
         }
 
         &:hover{
           background-image: image-url("nav_item_hover.png");
-          a {
+          p {
             color: $header-color;
           }
         }
