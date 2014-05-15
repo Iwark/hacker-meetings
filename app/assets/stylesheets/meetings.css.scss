@@ -1,97 +1,136 @@
-$meeting-height: 260px;
-$meeting-padding-top: 8px;
+.meetings{
+	$meeting-height: 260px;
+	$meeting-padding-top: 8px;
 
-.meeting{
-	position: relative;
-	overflow: hidden;
-	margin: 20px;
-	padding: $meeting-padding-top 12px;
-	border-radius: 16px;
-	background: rgba(255,255,255,0.8);
-	height: $meeting-height;
-	cursor: pointer;
-
-	.space{
+	.meeting{
 		position: relative;
+		overflow: hidden;
+		margin: 20px;
 		padding: $meeting-padding-top 12px;
+		border-radius: 16px;
+		background: rgba(255,255,255,0.8);
+		height: $meeting-height;
+		cursor: pointer;
 
-		.meeting_background{
+		.space{
 			position: relative;
-			width: 100%;
-			height: 100%;
-			overflow:hidden;
-			img{
-				width: 100%;
-				height: $meeting-height - $meeting-padding-top * 4;
-			}
-			.meeting_contents{
-				position: absolute;
-				padding:10px;
-				top: 0;
-				left: 60%;
-				width: 40%;
-				height: $meeting-height - $meeting-padding-top * 4;
-				background-color: rgba(226,255,51,0.8);
-				font-size: 12px;
-				font-weight: bold;
+			padding: $meeting-padding-top 12px;
 
-				.meeting_box{
-					margin-top:20px;
+			.meeting_background{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow:hidden;
+				img{
+					width: 100%;
+					height: $meeting-height - $meeting-padding-top * 4;
+				}
+				.meeting_contents{
+					position: absolute;
+					padding:10px;
+					top: 0;
+					left: 60%;
+					width: 40%;
+					height: $meeting-height - $meeting-padding-top * 4;
+					background-color: rgba(226,255,51,0.8);
+					font-size: 12px;
+					font-weight: bold;
+
+					.meeting_box{
+						margin-top:20px;
+					}
+				}
+			}
+
+			.meeting_image{
+				position: absolute;
+				width: 97%;
+				height: $meeting-height - 20;
+				.meeting_contents{
+					position: relative;
+					left: 60%;
+					width: 38%;
+					height: $meeting-height - 20;
+					background-color: rgba(226,255,51,0.8);
 				}
 			}
 		}
-
-		.meeting_image{
+		.meeting_title{
 			position: absolute;
-			width: 97%;
-			height: $meeting-height - 20;
-			.meeting_contents{
-				position: relative;
-				left: 60%;
-				width: 38%;
-				height: $meeting-height - 20;
-				background-color: rgba(226,255,51,0.8);
+			left: 0px;
+			bottom:20px;
+			width: 100%;
+			font-size: 20px;
+			background: #f25757;
+			color: white;
+			padding-left: 40px;
+		}
+		.white_hover{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			border-radius: 16px;
+			height: $meeting-height;
+			&:hover{
+				background:rgba(255,255,255,0.5);
 			}
 		}
 	}
-	.meeting_title{
-		position: absolute;
-		left: 0px;
-		bottom:20px;
-		width: 100%;
-		font-size: 20px;
-		background: #f25757;
-		color: white;
-		padding-left: 40px;
-	}
-	.white_hover{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
+}
+.show{
+	padding:10px;
+	.meeting{
+		background:rgba(255, 255, 255, 0.7);
 		border-radius: 16px;
-		height: $meeting-height;
-		&:hover{
-			background:rgba(255,255,255,0.5);
+		padding: 10px;
+		overflow: hidden;
+		.meeting-title{
+			margin-left: 10px;
+			font-size: 28px;
+		}
+		.meeting-image{
+			margin-top:15px;
+			img{
+				margin: 0 auto;
+			}
+			// background:red;
+		}
+		.meeting-desc{
+			// background:blue;
+			.meeting_info{
+				margin-top:15px;
+				margin-bottom:5px;
+			}
+		}
+		.meeting_body{
+			margin-top: 10px;
+			background: #fff;
+			border-radius: 16px;
+			word-break:break-all;
+		}
+		.meeting_members_info{
+			border: 0px solid;
+			border-left-width: 2px;
+			border-color: #3aa480;
+			padding-bottom:10000px;
+			margin-bottom:-10000px;
+		}
+		.user-info{
+			margin-top:4px;
+			height: 50px;
+			overflow: hidden;
+			.user-info-image{
+				float:left;
+				width:50px;
+				height:50px;
+			}
+			.user-info-name{
+				float:left;
+				height: 50px;
+			}
 		}
 	}
-}
-
-.meeting_body{
-	word-break:break-all;
-}
-
-.meeting_info{
-	margin-top:20px;
-	margin-bottom:5px;
-}
-
-.meeting_members_info{
-	border: 0px solid;
-	border-left-width: 2px;
-	border-color: #3aa480;
-	padding-bottom:10000px;
-	margin-bottom:-10000px;
 }
 
 .current_members_num{

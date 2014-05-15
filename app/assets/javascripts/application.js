@@ -25,7 +25,7 @@ $(function(){
     $(".main").toggleClass("active");
   });
 
-  $(".link-new-meeting").click(function(e) {
+  $(".sidebar-nav li").click(function(e) {
   	window.location.href = '/meetings/new';
   });
 

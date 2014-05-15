@@ -27,6 +27,12 @@ $sidebar-width: 200px;
 // サイドバーの透明部分（重なっている部分）の大きさ
 $sidebar-lap: 13px;
 
+html, body{
+  height: 100%;
+  // min-height: 100%;
+  // height: auto;
+}
+
 body {
   -webkit-text-size-adjust: 100%;
 }
@@ -99,7 +105,9 @@ body {
 #wrapper {
   position: relative;
   margin-top: $header-height;
-
+  height: 100%;
+  min-height: 100%;
+  // height: auto;
   .sidebar{
     position: fixed; // 絶対固定座標
     // margin-left: -$sidebar-width;
@@ -170,6 +178,8 @@ body {
     margin-left: $sidebar-width - $sidebar-lap;
     padding-top:13px;
     transition: all 0.4s ease 0s;
+    height: 100%;
+    min-height: 100%;
     .main_contents{
       position: relative;
       padding-top: 5px;
@@ -180,9 +190,16 @@ body {
       -moz-background-size:cover;
       background-size:cover;
       height: 100%;
+      min-height: 100%;
+      height: auto;
     }
   }
 }
+
+// body > #wrapper {
+    
+// }
+
 
 hr {
   background-color: #8b8b8b;
