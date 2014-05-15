@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, :controllers => {
-  	omniauth_callbacks: 'users/omniauth_callbacks',
+    omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
+
   root 'meetings#index'
 
   post 'meetings/join/:id', to:"meetings#join", as: "meetings_join"

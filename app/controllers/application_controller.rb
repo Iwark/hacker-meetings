@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   def authenticate_user!(options={})
     session[:user_return_to] = env['PATH_INFO']
     redirect_to user_omniauth_authorize_path(:facebook) unless user_signed_in?
-    super(options)
+    if !user_signed_in?
+      redirect_to user_omniauth_authorize_path(:facebook)
+    else
+      super(options)
+    end
   end
 
 

@@ -1,5 +1,4 @@
 class Users::RegistrationsController < Devise::RegistrationsController
- 
   def new
     super
   end
@@ -28,5 +27,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render "edit"
     end
   end
- 
+
+  protected
+  def authenticate_user!(options={})
+    logger.info("aaa");
+    session[:user_return_to] = env['PATH_INFO']
+    logger.info("aab");
+    if !user_signed_in?
+      redirect_to user_omniauth_authorize_path(:facebook)
+    else
+      super(options)
+    end
+  end
+
 end
