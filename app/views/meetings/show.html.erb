@@ -34,10 +34,10 @@
           <hr class="dot_line" />
           <div class="user-info">
             <div class="user-info-image">
-              <img src=<%= "https://graph.facebook.com/"+@meeting.user.uid+"/picture" %> />
+              <img src=<%= "https://graph.facebook.com/"+@meeting.user.uid+"/picture" if @meeting.user %> />
             </div>
             <div class="user-info-name">
-              <%= @meeting.user.display_name %>
+              <%= @meeting.user.display_name if @meeting.user %>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@
       <div class="action-area">
         <% if !user_signed_in? %>
         <%= link_to "ログインして参加", user_omniauth_authorize_path(:facebook), class:"btn btn-default join-button" %>
-        <% elsif @meeting.user != current_user %>
+        <% elsif @meeting.user == current_user %>
         <%# link_to 'イベントをキャンセルする', meetings_remove_path(@meeting) %>
         <% elsif @meeting.join_members.include?(current_user) %>
         <%= link_to 'キャンセル', meetings_cancel_path(@meeting), class:"btn btn-default join-button", method: :delete %>
@@ -74,10 +74,10 @@
         <% @meeting.join_members.each do |member| %>
         <div class="user-info col-xs-6 col-sm-12">
           <div class="user-info-image">
-            <img src=<%= "https://graph.facebook.com/"+@meeting.user.uid+"/picture" %> />
+            <img src=<%= "https://graph.facebook.com/"+member.uid+"/picture" if member %> />
           </div>
           <div class="user-info-name">
-            <%= @meeting.user.display_name %>
+            <%= member.display_name if member %>
           </div>
         </div>
         <% end %>

@@ -13,7 +13,7 @@
           <div class="meeting_box">
             主催者
             <hr />
-            <div><%= meeting.user.display_name %></div>
+            <div><%= meeting.user.display_name if meeting.user %></div>
           </div>
         </div>
       </div>
@@ -23,36 +23,5 @@
     </div>
     <div class="white_hover">
     </div>
-
-<!-- <div class="meeting_new"></div>
-<div class="meeting_image">
-<%= image_tag meeting.image_url(:thumb).to_s, class:"img-responsive meeting_image" %>
-</div>
-<div class="meeting_title">
-<%= meeting.title %>
-</div> -->
-<!-- <div class="col-xs-12 col-sm-6">
-
-</div>
-<div class="col-xs-12 col-sm-6">
-<div class="col-xs-4 col-sm-12 meeting_info">
-日時：
-<hr class="dot_line" />
-<div><%= meeting.start_date.strftime('%Y年%m月%d日 %H:%M') %> - <%= meeting.end_date.strftime('%H:%M') %>
-</div>
-</div>
-<div class="col-xs-4 col-sm-12 meeting_info">
-場所: 
-<hr class="dot_line" />
-<div><%= meeting.place %>
-</div>
-</div>
-<div class="col-xs-4 col-sm-12 meeting_info">
-主催者:
-<hr class="dot_line" />
-<div><%= meeting.user.name %></div>
-</div>
-</div>
-<div class="col-xs-12 meeting_body"><%= meeting.body %></div> -->
-</div>
+  </div>
 </div>
