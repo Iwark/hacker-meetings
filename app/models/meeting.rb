@@ -44,4 +44,16 @@ class Meeting < ActiveRecord::Base
     users
   end
 
+  # 開催時刻
+  def holds_at
+    date = ""
+    date += self.start_date.strftime('%Y年%m月%d日 %H:%M')
+    date += " - "
+    if self.start_date.mday == self.end_date.mday
+      date += self.end_date.strftime('%H:%M')
+    else
+      date += self.end_date.strftime('%d日 %H:%M')
+    end
+  end
+
 end
