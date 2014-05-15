@@ -15,11 +15,11 @@
  *= require highlight_js/github
  */
 
-@import "bootstrap";
+ @import "bootstrap";
 
-$header-top: 8px;
-$header-height: 50px;
-$header-color: #08b7ae;
+ $header-top: 8px;
+ $header-height: 50px;
+ $header-color: #08b7ae;
 
 // サイドバーの大きさ
 $sidebar-width: 200px;
@@ -55,11 +55,12 @@ body {
         margin-left: 8px;
       }
       .header-icon{
+        position:relative;
         float: left;
-        margin-left: 6px;
+        margin-left: 12px;
         margin-top: -$header-top - 1;
-        width: 60px;
-        height: 72px;
+        width: 53px;
+        height: 70.678px;
         background: image-url("header_icon.png");
       }
       .brand{
@@ -194,11 +195,6 @@ body {
     }
   }
 }
-
-// body > #wrapper {
-    
-// }
-
 
 hr {
   background-color: #8b8b8b;
