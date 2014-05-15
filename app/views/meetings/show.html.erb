@@ -37,7 +37,7 @@
               <img src=<%= "https://graph.facebook.com/"+@meeting.user.uid+"/picture" %> />
             </div>
             <div class="user-info-name">
-              <%= @meeting.user.name %>
+              <%= @meeting.user.display_name %>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@
             <img src=<%= "https://graph.facebook.com/"+@meeting.user.uid+"/picture" %> />
           </div>
           <div class="user-info-name">
-            <%= @meeting.user.name %>
+            <%= @meeting.user.display_name %>
           </div>
         </div>
         <% end %>

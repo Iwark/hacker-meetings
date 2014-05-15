@@ -1,29 +1,66 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="users-form">
+  <h2><%= current_user.name %><span class="unit">さん</span></h2>
+  <div>プロフィールを設定してください</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <div class="form-group">
+      <%= f.label :nickname, 'ニックネーム', class:"control-label" %><br />
+      <%= f.text_field :nickname, autofocus: true, class:"form-control" %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="form-group">
+      <%= f.label :email, 'メールアドレス', class:"control-label" %><br />
+      <%= f.email_field :email, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :gender, '性別', class:"control-label" %><br />
+      <div class="male">
+        <%= f.radio_button :gender, 'male', checked: true %>男
+      </div>
+      <div class="female">
+        <%= f.radio_button :gender, 'female' %>女
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :belonging, '所属', class:"control-label" %><br />
+      <%= f.text_field :belonging, class:"form-control", placeholder:"○○大学 xx年生" %>
+    </div>
+
+    <% if false %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div><%= f.label :password, class:"control-label" %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, autocomplete: "off" %></div>
+
+      <div><%= f.label :password_confirmation, class:"control-label" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+    <div><%= f.label :current_password, class:"control-label" %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %></div>
+
+    <% end %>
+
+    <div class="update-button-area">
+      <%= f.submit "ユーザーの更新", class:"update-button" %>
+    </div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <% if false %>
+    <h3>Cancel my account</h3>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    <p>
+      Unhappy?
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </p>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+    <%= link_to "Back", :back %>
+  <% end %>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

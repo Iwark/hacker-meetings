@@ -1,0 +1,48 @@
+.users-form{
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  .unit{
+    margin-left: 8px;
+    font-size:18px;
+  }
+  form{
+    padding: 20px;
+    .male{
+      margin-left: 20px;  
+      float: left;
+      input{
+        margin-right: 10px;
+      }
+    }
+    .female{
+      margin-left: 20px;
+      float: left;
+      input{
+        margin-right: 10px;
+      }
+    }
+    .update-button-area{
+      height: 50px;
+      .update-button{
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, 0, 0px);
+        -moz-transform: translate3d(-50%, 0, 0px);
+        transform: translate3d(-50%, 0, 0px);
+        background: #f25757;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        color: #fff;
+        &:hover{
+          background: #fff;
+          border: 1px solid #f25757;
+          color: #f25757;
+        }
+      }
+    }
+  }
+}

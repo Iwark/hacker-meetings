@@ -23,6 +23,7 @@
 #  location               :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  belonging              :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -34,6 +35,10 @@ class User < ActiveRecord::Base
   has_many :my_meetings, foreign_key: :user_id, class_name: "Meeting"
   has_many :members
   has_many :meetings, through: :members
+
+  validates :nickname, length: { minimum: 3, maximum: 8 }, uniqueness: true, on: :update
+  validates :email, uniqueness: true, on: :update
+  validates :gender, inclusion: { in: ['male', 'female'] }, on: :update
 
   def self.find_for_facebook_oauth(auth)
     user = User.where(provider: auth.provider, uid: auth.uid).first
@@ -53,6 +58,14 @@ class User < ActiveRecord::Base
     end
 
     return user
+  end
+
+  def display_name
+    if self.nickname
+      return self.nickname
+    else
+      return self.name
+    end
   end
 
 end

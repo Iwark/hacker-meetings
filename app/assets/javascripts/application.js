@@ -33,4 +33,8 @@ $(function(){
   	window.location.href = '/meetings';
   });
 
+  $(".users-edit-path").click(function(e) {
+    window.location.href = '/users/edit';
+  });
+
 });
