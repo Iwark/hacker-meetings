@@ -253,10 +253,16 @@ hr {
       }
       .navbar-right{
         float: right !important;
+        margin-right: 20px;
         .link-new-meeting{
           .text-new-meeting{
             display: none;
           }
+        }
+        .join-button{
+          font-size: 12px;
+          padding: 5px;
+          margin-top: -3px;
         }
       }
     }
