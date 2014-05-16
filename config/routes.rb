@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin/index'
+
   devise_scope :user do
     get "users/edit", to: "users/registrations#edit", as: :user_root
   end
