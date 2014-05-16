@@ -34,7 +34,7 @@ $(function(){
     e.preventDefault();
     $(".navbar").toggleClass("active");
     $(".sidebar").toggleClass("active");
-    $(".main").toggleClass("active");
+    // $(".main").toggleClass("active");
   });
 
   $(".making").click(function(e) {
@@ -47,6 +47,14 @@ $(function(){
 
   $(".users-edit-path").click(function(e) {
     window.location.href = '/users/edit';
+  });
+
+  $(".main").click(function(e) {
+  	if($(".sidebar.active").size() > 0){
+  		e.preventDefault();
+  		$(".navbar").toggleClass("active");
+  		$(".sidebar").toggleClass("active");
+  	}
   });
 
 });
