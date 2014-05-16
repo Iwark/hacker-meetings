@@ -117,6 +117,27 @@
 			}
 		}
 
+		.action-area{
+			position:relative;
+			margin-top: 20px;
+			height: 40px;
+			.join-button{
+				position: absolute;
+				left: 50%;
+				-webkit-transform: translate3d(-50%, 0, 0px);
+				-moz-transform: translate3d(-50%, 0, 0px);
+				transform: translate3d(-50%, 0, 0px);
+				background: #f25757;
+				border: 1px solid #fff;
+				color: #fff;
+				&:hover{
+					background: #fff;
+					border: 1px solid #f25757;
+					color: #f25757;
+				}
+			}
+		}
+
 		.meeting-main{
 			padding: 10px;
 			.meeting-title{
@@ -165,26 +186,6 @@
 			margin-bottom:-10000px;
 			hr {
 				background: transparent;
-			}
-			.action-area{
-				position:relative;
-				margin-top: 20px;
-				height: 40px;
-				.join-button{
-					position: absolute;
-					left: 50%;
-					-webkit-transform: translate3d(-50%, 0, 0px);
-      		-moz-transform: translate3d(-50%, 0, 0px);
-      		transform: translate3d(-50%, 0, 0px);
-      		background: #f25757;
-      		border: 1px solid #fff;
-      		color: #fff;
-      		&:hover{
-      			background: #fff;
-      			border: 1px solid #f25757;
-      			color: #f25757;
-      		}
-				}
 			}
 			.attendance-title{
 				float:left;
@@ -278,6 +279,7 @@
 		}
 	}
 }
+
 @media (max-width:767px){
 	.meetings{
 		.col-xs-12{
