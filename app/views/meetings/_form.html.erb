@@ -36,11 +36,11 @@
 		<%= f.label :start_date, '日時', class:"control-label" %>
 		<div>
 			<div class="start-date">
-				<%= f.datetime_select :start_date, class:"form-control" %>
+				<%= f.datetime_select :start_date, class:"form-control", discard_year: true, use_two_digit_numbers: true, datetime_separator: " - ", minute_step: 10 %>
 			</div>
-			<div class="dash"> 〜 </div>
+			<div class="dash"> − </div>
 			<div class="end-date">
-				<%= f.datetime_select :end_date, class:"form-control end-date" %>
+				<%= f.datetime_select :end_date, class:"form-control", discard_year: true, use_two_digit_numbers: true, datetime_separator: " - ", minute_step: 10 %>
 			</div>
 		</div>
 		<div style="clear:both;"></div>

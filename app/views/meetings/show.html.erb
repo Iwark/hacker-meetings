@@ -41,6 +41,15 @@
             </div>
           </div>
         </div>
+        <% if false %>
+          <div class="col-xs-12 meeting_info">
+            URL:
+            <hr class="dot_line" />
+            <div class="meeting-url">
+              <%= @meeting.url %>
+            </div>
+          </div>
+        <% end %>
       </div>
       <div class="col-xs-12 meeting_body"><%= @meeting.body %></div> 
     </div>
