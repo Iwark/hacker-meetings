@@ -19,7 +19,8 @@ $( () ->
 		mark(".preview", $(".meeting_body").val())
 
 	if $("textarea.meeting_body").size() > 0
-		$("textarea.meeting_body").val("## 概要\nイベントを開催します。\n\n## 参加条件\n誰でもOK！") if $("textarea.meeting_body").val() == ""
+		if $("textarea.meeting_body").val() == ""
+			$("textarea.meeting_body").val("## 概要\nイベントを開催します。\n\n## 参加条件\n誰でもOK！")
 		$("textarea.meeting_body").on 'keyup', () ->
 			mark(".preview", $("textarea.meeting_body").val())
 			return
