@@ -11,6 +11,38 @@
 		width: 100%;
 		th,td{
 			border: 1px solid #444 !important;
+			table-layout:fixed !important;
+			word-break: break-all;
+			&.user_id{
+				width: 32px;
+			}
+			&.uid{
+				width: 82px;
+			}
+			&.name, &.nickname{
+				width: 80px;
+			}
+			&.gender{
+				width: 60px;
+			}
+			&.belonging{
+				width: 80px;
+			}
+			&.birthday{
+				width: 64px;
+			}
+			&.location{
+				width: 80px;
+			}
+			&.email{
+				width: 120px;
+			}
+			&.meetings{
+				width: 206px;
+			}
+			&.last_sign_in_at, &.created_at{
+				width: 58px;
+			}
 		}
 		ul,li{
 			margin-left: -10px;
