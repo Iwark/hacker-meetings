@@ -37,6 +37,10 @@ $(function(){
     $(".main").toggleClass("active");
   });
 
+  $(".making").click(function(e) {
+    alert("このコンテンツは準備中です。実装されるまでしばらくお待ちください。");
+  });
+
   $(".meetings-path").click(function(e) {
   	window.location.href = '/meetings';
   });
