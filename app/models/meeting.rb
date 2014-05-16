@@ -29,7 +29,7 @@ class Meeting < ActiveRecord::Base
   # 参加者の一覧を取得
   def join_members
     users = []
-    self.members.where(status:"join").order("created_at DESC").each do |member|
+    self.members.where(status:"join").order("created_at ASC").each do |member|
       users << member.user
     end
     users
@@ -38,7 +38,7 @@ class Meeting < ActiveRecord::Base
   # キャンセルした人の一覧を取得
   def cancel_members
     users = []
-    self.members.where(status:"cancel").order("created_at DESC").each do |member|
+    self.members.where(status:"cancel").order("created_at ASC").each do |member|
       users << member.user
     end
     users
