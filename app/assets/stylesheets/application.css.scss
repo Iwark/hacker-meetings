@@ -101,13 +101,15 @@ body {
       }
       .join-button{
         margin-top: -5px;
-        background: #f25757;
-        border: 1px solid #fff;
-        color: #fff;
+        background: #fff;
+        border: 1px solid #fffbb7;
+        color: #00bdb1;
+        font-weight: bold;
+        padding: 5px;
         &:hover{
-          background: #fff;
-          border: 1px solid #f25757;
-          color: #f25757;
+          background: #fffbb7;
+          border: 1px solid #fff;
+          color: #00bdb1;
         }
       }
     }

@@ -18,7 +18,7 @@
         <% elsif @meeting.user == current_user %>
         <%# link_to 'イベントをキャンセルする', meetings_remove_path(@meeting) %>
         <% elsif @meeting.join_members.include?(current_user) %>
-        <%= link_to 'キャンセル', meetings_cancel_path(@meeting), class:"btn btn-default join-button", method: :delete %>
+        <%# link_to 'キャンセル', meetings_cancel_path(@meeting), class:"btn btn-default join-button", method: :delete %>
         <% else %>
         <%= link_to '参加する', meetings_join_path(@meeting), class:"btn btn-default join-button", method: :post %>
         <% end %>
