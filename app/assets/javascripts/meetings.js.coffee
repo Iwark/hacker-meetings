@@ -13,7 +13,8 @@ $( () ->
 	mark = (target, val) ->
 		$(target).html marked(val)
 		$('pre code').each (i, e) ->
-				hljs.highlightBlock(e)
+			hljs.highlightBlock(e)
+		$(target+" table").addClass("table table-bordered table-hover");
 
 	if $(".preview").size() > 0
 		mark(".preview", $(".meeting_body").val())
