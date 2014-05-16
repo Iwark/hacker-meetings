@@ -278,7 +278,14 @@
 	}
 }
 @media (max-width:767px){
+	.meetings{
+		.meeting{
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+	}
 	.show{
+		padding: 5px;
 		.meeting{
 			.meeting_members_info{
 				border-left-width: 0px;
@@ -290,10 +297,11 @@
 					zoom: 75%;
 				}
 			}
-			
 		}
 	}
 	.meeting-form{
+		margin: 0px;
+		padding: 10px;
 		form{
 			.preview{
 				zoom: 75%;
