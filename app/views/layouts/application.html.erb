@@ -4,6 +4,21 @@
   <title>HackerMeetings</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+
+  <% if @meeting %>
+    <meta property="og:title" content="<%= @meeting.title %>">
+    <meta property="og:description" content="みんなでイベントを楽しもう！">
+    <meta property="og:image" content="<%= @meeting.image_url(:thumb).to_s %>">
+    <meta property="og:url" content="http://hacker-meetings.com/meetings/<%= @meeting.id %>">
+  <% else %>
+    <meta property="og:title" content="Hacker-Meetings">
+    <meta property="og:description" content="みんなでイベントを楽しもう！">
+    <meta property="og:image" content="http://howcollect.jp/favicon.ico">
+    <meta property="og:url" content="http://hacker-meetings.com">
+  <% end %>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hacker-Meetings">
+
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
