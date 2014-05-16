@@ -35,18 +35,20 @@
           <%= link_to 'Hacker-Meetings',root_path, class:"nav navbar-brand" %>
         </div>
       </div>
+      <div class="navbar-right">
       <% if user_signed_in? %>
-        <div class="navbar-right">
-          <div class="link-new-meeting">
-            <div class="plus-new-meeting">
-              +
-            </div>
-            <div class="text-new-meeting">
-              新規イベント作成
-            </div>
+        <div class="link-new-meeting">
+          <div class="plus-new-meeting">
+            +
+          </div>
+          <div class="text-new-meeting">
+            新規イベント作成
           </div>
         </div>
+      <% else %>
+        <%= link_to "ログイン", user_omniauth_authorize_path(:facebook), class:"btn btn-default join-button" %>
       <% end %>
+      </div>
     </div>
   </nav>
 
