@@ -2,7 +2,7 @@ class AdminController < ApplicationController
 	before_action :authenticate_user!
 	before_action :authenticate_admin_user!
   def index
-  	@users = User.all
+  	@users = User.all.order("id ASC")
   end
 
   private
