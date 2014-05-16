@@ -209,7 +209,6 @@
 				}
 			}
 			.current_members{
-				margin-bottom: 10px;
 				.user-info{
 					margin-top: 4px;
 					width: 100%;
@@ -293,14 +292,17 @@
 	.show{
 		padding: 5px;
 		.meeting{
+			padding-bottom: 20px;
 			.meeting_members_info{
 				border-left-width: 0px;
 				padding-left: 20px;
 				padding-right: 20px;
+				padding-bottom:0px;
+				margin-bottom:0px;
 			}
 			.meeting-main{
 				.meeting_body{
-					zoom: 75%;
+					zoom: 100%;
 				}
 			}
 		}
