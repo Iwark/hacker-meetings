@@ -40,6 +40,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'newrelic_rpm'
+
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
@@ -49,5 +51,5 @@ end
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
