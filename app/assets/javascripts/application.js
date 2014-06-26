@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require highlight_js/highlight.pack
 //= require_tree .
 
