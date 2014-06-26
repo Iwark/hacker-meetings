@@ -26,5 +26,5 @@ production:
   database: hackerdb
   pool: 5
   username: hacker
-  host: hacker-meetings.com
+  host: localhost
   port: 5432
