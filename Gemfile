@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'therubyracer', :platforms => :ruby
 
 gem 'rails', '4.1.0'
 
@@ -27,7 +28,8 @@ gem 'highlight_js-rails4'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'jazz_hands'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -36,20 +38,18 @@ group :development do
   gem 'annotate'
 end
 
-group :production do
-  gem 'pg'
-end
+#group :production do
+#  gem 'pg'
+#end
 
 gem 'newrelic_rpm'
 
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-gem 'debugger', group: [:development, :test]
 
