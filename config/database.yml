@@ -21,8 +21,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: hackerdb
-  pool: 5
-  username: hacker
+  <<: *default
+  # adapter: postgresql
+  # encoding: utf8
+  # database: hackerdb
+  # pool: 5
+  # username: hacker
