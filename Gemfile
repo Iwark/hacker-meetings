@@ -26,8 +26,9 @@ gem 'rb-readline'
 gem 'marked-rails'
 gem 'highlight_js-rails4'
 
+gem 'sqlite3'
+
 group :development, :test do
-  gem 'sqlite3'
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'pry-byebug'
 end
@@ -37,6 +38,10 @@ group :development do
   gem 'better_errors'
   gem 'annotate'
   gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-bundler"
+  gem "capistrano-rbenv"
+  gem "capistrano3-unicorn"
 end
 
 #group :production do
