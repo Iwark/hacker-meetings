@@ -17,5 +17,4 @@
 /log/*.log
 /tmp
 
-/public/uploads
 .elasticbeanstalk/
