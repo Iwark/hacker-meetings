@@ -1,20 +1,3 @@
---
--- PostgreSQL database dump
---
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-
-SET search_path = public, pg_catalog;
-
---
--- Data for Name: meetings; Type: TABLE DATA; Schema: public; Owner: hacker
---
-
 INSERT INTO meetings VALUES (2, 'いわーく会', '## 概要
 いわーくを祭る会
 
@@ -142,18 +125,6 @@ Swiftについての解説も行います。
 どしどしご参加ください！
 ', 20, 1, '__________2014-06-09_23.22.28.png', '2014-06-29 04:00:00', '2014-06-29 10:00:00', 'http://', 'ドーナツ屋さん', '渋谷区道玄坂1丁目10-8 渋谷道玄坂東急ビル6階', '2014-06-09 14:32:41.523432', '2014-06-23 11:17:46.711647');
 
-
---
--- Name: meetings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hacker
---
-
-SELECT pg_catalog.setval('meetings_id_seq', 4, true);
-
-
---
--- Data for Name: members; Type: TABLE DATA; Schema: public; Owner: hacker
---
-
 INSERT INTO members VALUES (1, 1, 1, '2014-05-15 18:39:09.052182', 'join', '2014-05-15 18:39:09.052738', '2014-05-15 18:39:09.052738');
 INSERT INTO members VALUES (2, 1, 3, '2014-05-16 04:34:53.549698', 'join', '2014-05-16 04:34:53.550717', '2014-05-16 04:34:53.550717');
 INSERT INTO members VALUES (3, 1, 4, '2014-05-16 04:49:50.294938', 'join', '2014-05-16 04:49:50.295727', '2014-05-16 04:49:50.295727');
@@ -191,17 +162,6 @@ INSERT INTO members VALUES (35, 4, 35, '2014-06-20 02:54:46.927101', 'join', '20
 INSERT INTO members VALUES (36, 4, 39, '2014-06-20 03:36:44.296254', 'join', '2014-06-20 03:36:44.319299', '2014-06-20 03:36:44.319299');
 INSERT INTO members VALUES (37, 4, 37, '2014-06-20 03:43:31.84166', 'join', '2014-06-20 03:43:31.842838', '2014-06-20 03:43:31.842838');
 INSERT INTO members VALUES (38, 4, 12, '2014-06-20 22:41:36.259739', 'join', '2014-06-20 22:41:36.266149', '2014-06-20 22:41:36.266149');
-
-
---
--- Name: members_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hacker
---
-
-SELECT pg_catalog.setval('members_id_seq', 38, true);
-
---
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: hacker
---
 
 INSERT INTO users VALUES (3, 'ayaka.doki@gmail.com', '$2a$10$ZG6fco.Y7r5vsdIRFf1SPOqx5eVP/9ltg5wBuPIPbh68Xqf2O87ha', NULL, NULL, NULL, 1, '2014-05-16 04:30:31.673012', '2014-05-16 04:30:31.673012', '180.31.97.215', '180.31.97.215', 'facebook', '100003210881929', 'Ayaka Doki', 'CAADMgIjhm8EBALkzam2fvPINRHTzBt6Lw34QvZCGCzL1ZBwrCLZBoKoo1xoKphEZCz1i9CkukWEGMjWZCs6UZBakyLYTwgcNmuNs0QiO4KlNQWUwOJtGZCVsCx6ZCnwGZCjLkaTYeReNoVjNOumFhb20uxojZBMGPtgraTbP40yw713qLlPvmWzOmrI0ChUxcfZCPkZD', 'あやぽよ', 'female', '02/26/1993', 'Setagaya-ku, Tokyo, Japan', '2014-05-16 04:30:31.657856', '2014-05-16 04:30:44.990973', '慶応義塾大学商学部');
 INSERT INTO users VALUES (1, 'iwark02@gmail.com', '$2a$10$VhrCA5jrGKEPlBMF8oTXKO1KNoE1bpG/kUkRJez1EJumy1YLhZXnq', NULL, NULL, NULL, 30, '2014-06-23 10:57:26.74629', '2014-06-20 03:17:50.785048', '110.5.42.106', '182.249.242.31', 'facebook', '100001443255301', 'Kohei Iwasaki', 'CAADMgIjhm8EBACU3GzCRKYtBtiYroDPFZBBBGyGhkkXzI9Xgv5Bjl0ev6dChKeLU5vas87JzZB6SjbOM5BbjQfN99L6SimaCowQ2l6m7BHXGGOgEBwBHC3SRZBEqwLHgKnn68ft8KafUQUssgbgNQ43emGf7mhFNvfOVyNi5X9TscwzUTsqhYwAuef68RoZD', 'いわーく', 'male', '05/18/1991', 'Chiyoda-ku, Tokyo, Japan', '2014-05-08 09:43:19.148536', '2014-06-23 10:57:29.384463', '上智大学４年生');
@@ -243,15 +203,4 @@ INSERT INTO users VALUES (36, '4o2s5q3t@gmail.com', '$2a$10$RSkcGI12eeox3BnI.gXn
 INSERT INTO users VALUES (38, 'wedliketothink@gmail.com', '$2a$10$cGiE0AnCKBYpICbAtRf2putMYV3jIl5eq7E18za0MyBwR6xgunmru', NULL, NULL, NULL, 1, '2014-06-20 02:41:42.032563', '2014-06-20 02:41:42.032563', '131.113.17.82', '131.113.17.82', 'facebook', '100002654338021', 'Yoshiki  Kawakita', 'CAADMgIjhm8EBALfVthyDC33rIZAVZBjC9kwihUPvjqArj6RF3fzfTJnKyaLvRP3rKte3qLIxtE1Em3VXUkq5BzYl6625MyXBXEx3nZAop26qbknfwbR0lsR6dzEIGoJbiYAgZAAEeYI07mgnIU9qpZAvZCnoDp3Rvsqul1syqPEtyjlA1dJMQGN8CzURWElpcZD', 'しかお', 'male', '12/20/1991', '', '2014-06-20 02:41:40.580299', '2014-06-20 02:42:27.122706', 'LITメンター');
 INSERT INTO users VALUES (39, 'negishi@donuts.ne.jp', '$2a$10$6BYjzPruLpcV8RW4pS73Xuure/VRp5zrTNp8b4ZSMme2x4z/ney6i', NULL, NULL, NULL, 1, '2014-06-20 03:35:04.428639', '2014-06-20 03:35:04.428639', '110.5.42.106', '110.5.42.106', 'facebook', '519683119', 'Shin Negishi', 'CAADMgIjhm8EBADJZC5PPnhmM6dmw5OkZAkYDg4qA894ETdhJFGGuwjsz3BGn1otPCqsQD013ciPuxCAJb77BpDanlFXiXVJ9nHWWYgXQGOujYqp1SLQ1JbM3xZAWR7T9u76UX0KGnd9VXS3PbAgJHrtB7nyVp9dkIK9tlhvrCVmzvkliVNO', 'snegishi', 'male', '06/12/1979', 'Shinjuku-ku, Tokyo, Japan', '2014-06-20 03:35:03.947222', '2014-06-20 03:35:39.099558', '');
 
-
---
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hacker
---
-
-SELECT pg_catalog.setval('users_id_seq', 39, true);
-
-
---
--- PostgreSQL database dump complete
---
 
