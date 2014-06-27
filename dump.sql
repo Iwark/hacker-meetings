@@ -10,7 +10,7 @@ SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
-SET check_function_bodies = false;
+SET check_function_bodies = f;
 SET client_min_messages = warning;
 
 SET search_path = public, pg_catalog;
@@ -35,7 +35,7 @@ COPY meetings (id, title, body, capacity, user_id, image, start_date, end_date, 
 -- Name: meetings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hacker
 --
 
-SELECT pg_catalog.setval('meetings_id_seq', 4, true);
+SELECT pg_catalog.setval('meetings_id_seq', 4, t);
 
 
 --
@@ -91,7 +91,7 @@ COPY members (id, meeting_id, user_id, joined_at, status, created_at, updated_at
 -- Name: members_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hacker
 --
 
-SELECT pg_catalog.setval('members_id_seq', 38, true);
+SELECT pg_catalog.setval('members_id_seq', 38, t);
 
 
 --
@@ -163,7 +163,7 @@ COPY users (id, email, encrypted_password, reset_password_token, reset_password_
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hacker
 --
 
-SELECT pg_catalog.setval('users_id_seq', 39, true);
+SELECT pg_catalog.setval('users_id_seq', 39, t);
 
 
 -- Completed on 2014-06-26 23:25:13 JST
