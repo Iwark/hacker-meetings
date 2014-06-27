@@ -36,6 +36,7 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'annotate'
+  gem "capistrano"
 end
 
 #group :production do
