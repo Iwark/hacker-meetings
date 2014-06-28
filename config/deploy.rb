@@ -28,10 +28,12 @@ set :rbenv_ruby, '2.1.2'
 # set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets}
+
+set :default_stage, "production"
 
 # Default value for default_env is {}
-set :default_env, { 
+set :default_env, {
   rbenv_root: "/home/ec2-user/rbenv",
   path: "/home/ec2-user/rbenv/shims:/home/ec2-user/rbenv/bin:$PATH"
 }
@@ -39,7 +41,9 @@ set :default_env, {
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :unicorn_rack_env, "none"
+# set :linked_dirs, (fetch(:linked_dirs) + ['tmp/pids'])
+
+set :unicorn_rack_env, "production"
 set :unicorn_config_path, 'config/unicorn.conf'
 
 after 'deploy:publishing', 'deploy:restart'
@@ -47,11 +51,11 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    # on roles(:app), in: :sequence, wait: 5 do
       invoke 'unicorn:restart'
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-    end
+    # end
   end
 
   after :publishing, :restart
