@@ -10,9 +10,7 @@ role :db,  %w{ec2-user@hacker-meetings.com}
 
 set :stage, :production
 set :rails_env, :production
-set :secret_key_base, 'f3d0707a11e000a6d103e932650b064decc567d9e468cdb08b7a9351f87c98a6c7654af54a30d20f33d9871e37f6e26ac0eb0e71fac619a3a51d8f5b52594fc5'
-set :facebook_app_id, '224852424367041'
-set :facebook_app_secret, '8d95e7e68ee1affcec9f25dfd4ad16d8'
+
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the

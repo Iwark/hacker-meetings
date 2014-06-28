@@ -22,7 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: /home/ec2-user/hacker-meetings/shared/production.sqlite3
   # adapter: postgresql
   # encoding: utf8
   # database: hackerdb

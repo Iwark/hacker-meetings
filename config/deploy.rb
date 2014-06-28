@@ -25,7 +25,7 @@ set :rbenv_ruby, '2.1.2'
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/secrets.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets}
@@ -35,7 +35,10 @@ set :default_stage, "production"
 # Default value for default_env is {}
 set :default_env, {
   rbenv_root: "/home/ec2-user/rbenv",
-  path: "/home/ec2-user/rbenv/shims:/home/ec2-user/rbenv/bin:$PATH"
+  path: "/home/ec2-user/rbenv/shims:/home/ec2-user/rbenv/bin:$PATH",
+  secret_key_base: 'f3d0707a11e000a6d103e932650b064decc567d9e468cdb08b7a9351f87c98a6c7654af54a30d20f33d9871e37f6e26ac0eb0e71fac619a3a51d8f5b52594fc5',
+  facebook_app_id: '224852424367041',
+  facebook_app_secret: '8d95e7e68ee1affcec9f25dfd4ad16d8'
 }
 
 # Default value for keep_releases is 5
