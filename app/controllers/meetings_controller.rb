@@ -8,7 +8,7 @@ class MeetingsController < ApplicationController
 	# Meetings一覧を表示するアクション
 	# get /meetings
 	def index
-		@meetings = Meeting.all
+		@meetings = Meeting.all.order("updated_at DESC")
 	end
 
 	# 指定したMeetingの情報を取得するアクション
